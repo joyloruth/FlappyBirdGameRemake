@@ -3,12 +3,15 @@
  */
 package flappyBirdGame.joyloruth.com;
 
-import java.awt.*;
+
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.Timer;
+import javax.swing.JFrame;
 
 import javax.swing.JPanel;
 
@@ -20,58 +23,29 @@ import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	
-	final int WIDTH = 525, HEIGHT = 500;
+	final int WIDTH = 525, HEIGHT = 550;
 	int birdHeight = HEIGHT/4;
 	int velocity  = 0;
 	int accel = 4;
-	//static int fix = birdHeight + velocity;
+	
 	
 	public GamePanel(){
 		
-		//sets size
-		this.setSize(WIDTH, HEIGHT);
 		
-		//focuses JPanel
-		this.setFocusable(true);
-		
-		//adds keyListener
+		setSize(WIDTH, HEIGHT);
 		addKeyListener(this);
+		setFocusable(true);
 		
-		//sets background color
-		this.setBackground(Color.BLACK);
-		
+		setBackground(Color.BLACK);
+		setVisible(true);
 		new Timer(40, this).start();;
 		
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		velocity += accel;
-		
+		velocity  = velocity + accel;
 		repaint();
-		
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		
-		
-		
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		int code = e.getKeyCode();
-		
-		if(code == KeyEvent.VK_UP) {
-			velocity = velocity - 8;
-			}
-		
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 	
@@ -82,9 +56,43 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	
 	public void drawFlappyBird(Graphics g){
 		g.setColor(Color.WHITE);
-		g.fillRect(150, birdHeight + velocity,50, 50);
+		g.fillRect(75, birdHeight + velocity,50, 50);
 	}
 	
+	
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		
+		int code = e.getKeyCode();
+		System.out.println(code);
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		int code = e.getKeyCode();
+		
+		System.out.println(code);
+		
+	//	if(code == KeyEvent.VK_UP) {	
+		//	 velocity = -9; 
+		//	}
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+
+
+	
+
 	
 
 }
