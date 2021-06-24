@@ -64,7 +64,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 		int code = e.getKeyCode();
 		
 		if(code == KeyEvent.VK_UP) {
-			birdHeight = velocity - 8;
+			velocity = velocity - 8;
 			}
 		
 	}
