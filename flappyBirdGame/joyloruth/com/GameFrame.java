@@ -11,7 +11,7 @@ public class GameFrame extends JFrame {
 		this.setTitle("FlappyBird Game");
 		this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
 		
-		
+		this.add(new GamePanel());
 	}
 
 	
