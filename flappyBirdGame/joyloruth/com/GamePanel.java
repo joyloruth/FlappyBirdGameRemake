@@ -56,13 +56,6 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	
 	
 
-	@Override
-	public void keyTyped(KeyEvent e) {
-		
-		int code = e.getKeyCode();
-		System.out.println(code);
-		
-	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -77,10 +70,40 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	System.out.println(code);
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		
+		int code = e.getKeyCode();
+		System.out.println(code);
 		
 	}
 	
