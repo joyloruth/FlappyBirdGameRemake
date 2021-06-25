@@ -15,7 +15,7 @@ import javax.swing.JPanel;
  *
  */
 
-public class GamePanel extends JPanel implements KeyListener, ActionListener{
+public class FlappyPanel extends JPanel implements KeyListener, ActionListener{
 	
 	final int WIDTH = 525, HEIGHT = 550;
 	int flappyHeight = HEIGHT/4;
@@ -23,19 +23,19 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	int flappyA = 4;
 	
 	
-	public GamePanel(){
-		
-		
+	
+	public FlappyPanel() {
+		//t.start();
 		this.setSize(WIDTH, HEIGHT);
 		this.addKeyListener(this);
-		this.grabFocus();
+		this.setBackground(Color.black);
 		this.setFocusable(true);
-		this.setBackground(Color.BLACK);
-		this.setVisible(true);
+		this.setFocusTraversalKeysEnabled(false);
+		
 		
 		new Timer(40, this).start();
-		
 	}
+
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -50,62 +50,38 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	}
 	
 	public void drawFlappyBird(Graphics g){
-		g.setColor(Color.red);
-		g.fillRect(75, flappyHeight + flappyV,50, 50);
+		g.setColor(Color.WHITE);
+		g.fillRect(75, flappyHeight + flappyV,40, 40);
 	}
-	
-	
 
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
 		
-		System.out.println(code);
+	    if(code == KeyEvent.VK_UP) {flappyV = -9; }
+
 		
-	if(code == KeyEvent.VK_UP) {	
-		 flappyV = -9; 
-		}
-	
-	System.out.println(code);
-		
+	    if(code == KeyEvent.VK_DOWN) {	
+		         flappyV = 9;
+		         }
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+     int code = e.getKeyCode();
 		
+	    if(code == KeyEvent.VK_UP) {	
+		         flappyV = -20;
+		         }
 	}
-	
+
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		
-		int code = e.getKeyCode();
-		System.out.println(code);
-		
 	}
+	
 	
 	
 	
