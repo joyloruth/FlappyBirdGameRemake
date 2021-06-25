@@ -1,8 +1,4 @@
-/**
- * 
- */
 package flappyBirdGame.joyloruth.com;
-
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -12,7 +8,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.Timer;
 import javax.swing.JFrame;
-
 import javax.swing.JPanel;
 
 /**
@@ -20,31 +15,31 @@ import javax.swing.JPanel;
  *
  */
 
-
 public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	
 	final int WIDTH = 525, HEIGHT = 550;
-	int birdHeight = HEIGHT/4;
-	int velocity  = 0;
-	int accel = 4;
+	int flappyHeight = HEIGHT/4;
+	int flappyV  = 0;
+	int flappyA = 4;
 	
 	
 	public GamePanel(){
 		
 		
-		setSize(WIDTH, HEIGHT);
-		addKeyListener(this);
-		setFocusable(true);
+		this.setSize(WIDTH, HEIGHT);
+		this.addKeyListener(this);
+		this.grabFocus();
+		this.setFocusable(true);
+		this.setBackground(Color.BLACK);
+		this.setVisible(true);
 		
-		setBackground(Color.BLACK);
-		setVisible(true);
-		new Timer(40, this).start();;
+		new Timer(40, this).start();
 		
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		velocity  = velocity + accel;
+		flappyV  = flappyV + flappyA;
 		repaint();
 		
 	}
@@ -55,8 +50,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	}
 	
 	public void drawFlappyBird(Graphics g){
-		g.setColor(Color.WHITE);
-		g.fillRect(75, birdHeight + velocity,50, 50);
+		g.setColor(Color.red);
+		g.fillRect(75, flappyHeight + flappyV,50, 50);
 	}
 	
 	
@@ -75,9 +70,11 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 		
 		System.out.println(code);
 		
-	//	if(code == KeyEvent.VK_UP) {	
-		//	 velocity = -9; 
-		//	}
+	if(code == KeyEvent.VK_UP) {	
+		 flappyV = -9; 
+		}
+	
+	System.out.println(code);
 		
 	}
 
