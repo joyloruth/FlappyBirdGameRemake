@@ -10,6 +10,7 @@ public class Main {
 		JFrame frame = new JFrame();
 		FlappyPanel flappyPanel = new FlappyPanel();
 		frame.add(flappyPanel);
+		frame.setTitle("FlappyBird Game");
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.setSize(500,500);
