@@ -35,7 +35,7 @@ public class FrontPanel extends JPanel{
 		panel.setBackground(Color.green);
 		this.setVisible(true);
 		//this.setBackground(Color.blue);
-		this.setLayout(new CardLayout());
+		//this.setLayout(new CardLayout());
 		this.setBackground(Color.red);
 		//labels
 		this.add(homeHeaderLabel);
