@@ -10,14 +10,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class FrontPanel extends JPanel{
-	
-	JButton button = new JButton("Play Game"); 
+	JButton button = new JButton(new ImageIcon("score.png"));
+	//JButton button = new JButton("Play Game"); 
 	JLabel home = new JLabel();
 	
 	FrontPanel(){
 		this.setSize(600,600);
 		this.setVisible(true);
 		this.setBackground(Color.green);
+		
 		this.add(button);
 		this.add(home);
 		ImageIcon icon = new ImageIcon("flappyBird.png");
