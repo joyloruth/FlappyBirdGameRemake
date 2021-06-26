@@ -22,7 +22,7 @@ public class FlappyPanel extends JPanel implements KeyListener, ActionListener{
 	int velocity  = 0;
 	int acceleration = 4;
 	int shift = 8;
-	int fall = 1;
+	int fall = 15;
 	
 	
 	
@@ -50,11 +50,13 @@ public class FlappyPanel extends JPanel implements KeyListener, ActionListener{
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		this.drawWalls(g);
 		this.drawFlappyBird(g);
+		
 	}
 	
 	public void drawFlappyBird(Graphics g){
-		g.setColor(Color.WHITE);
+		g.setColor(Color.yellow);
 		g.fillRect(flappyHeight + shift, flappyHeight + velocity,25, 25);
 	}
 
@@ -64,8 +66,8 @@ public class FlappyPanel extends JPanel implements KeyListener, ActionListener{
 		int code = e.getKeyCode();
 		
 	    if(code == KeyEvent.VK_UP) {velocity = -9; }
-	    if(code == KeyEvent.VK_RIGHT) {shift = 30; }
-	    if(code == KeyEvent.VK_LEFT) {shift = -30; }
+	    if(code == KeyEvent.VK_RIGHT) {shift = 80; }
+	    if(code == KeyEvent.VK_LEFT) {shift = -20; }
 	}
 	
 	
@@ -83,7 +85,10 @@ public class FlappyPanel extends JPanel implements KeyListener, ActionListener{
 	}
 	
 	
-	
+	public void drawWalls(Graphics g) {
+		g.setColor(Color.green);
+		g.fill3DRect(80, 0, 90, 550, true);
+	}
 	
 
 
