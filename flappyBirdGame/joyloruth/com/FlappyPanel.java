@@ -22,6 +22,7 @@ public class FlappyPanel extends JPanel implements KeyListener, ActionListener{
 	int velocity  = 0;
 	int acceleration = 4;
 	int shift = 8;
+	int fall = 1;
 	
 	
 	
@@ -40,6 +41,7 @@ public class FlappyPanel extends JPanel implements KeyListener, ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		velocity  = velocity + fall;
 		velocity  = velocity + acceleration;
 		repaint();
 		
