@@ -21,7 +21,7 @@ public class FrontPanel extends JPanel{
 		this.add(button);
 		this.add(home);
 		ImageIcon icon = new ImageIcon("flappyBird.png");
-		this.setLayout(new FlowLayout());
+		//this.setLayout(new FlowLayout());
 		home.setIcon(icon);
 		
 		
