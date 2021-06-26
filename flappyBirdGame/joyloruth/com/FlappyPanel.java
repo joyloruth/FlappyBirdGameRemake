@@ -30,7 +30,7 @@ public class FlappyPanel extends JPanel implements KeyListener, ActionListener{
 		//t.start();
 		this.setSize(WIDTH, HEIGHT);
 		this.addKeyListener(this);
-		this.setBackground(Color.black);
+		this.setBackground(Color.cyan);
 		this.setFocusable(true);
 		this.setFocusTraversalKeysEnabled(false);
 		
@@ -41,7 +41,9 @@ public class FlappyPanel extends JPanel implements KeyListener, ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		++shift;
+		
+		shift = shift + 2; ;
+		
 		velocity  = velocity + fall;
 		velocity  = velocity + acceleration;
 		repaint();
@@ -50,14 +52,14 @@ public class FlappyPanel extends JPanel implements KeyListener, ActionListener{
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		this.drawWalls(g);
+		this.drawBarriers(g);
 		this.drawFlappyBird(g);
 		
 	}
 	
 	public void drawFlappyBird(Graphics g){
 		g.setColor(Color.yellow);
-		g.fillRect(flappyHeight + shift, flappyHeight + velocity,25, 25);
+		g.fill3DRect(shift, flappyHeight + velocity,25, 25, true);
 	}
 
 
@@ -85,7 +87,7 @@ public class FlappyPanel extends JPanel implements KeyListener, ActionListener{
 	}
 	
 	
-	public void drawWalls(Graphics g) {
+	public void drawBarriers(Graphics g) {
 		g.setColor(Color.green);
 		g.fill3DRect(80, 0, 90, 550, true);
 	}
