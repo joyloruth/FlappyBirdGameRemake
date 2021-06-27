@@ -20,7 +20,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		FrontFrame frame = new FrontFrame();
-		//GameFrame gf = new GameFrame();
+		
 		
 		
 		
