@@ -6,6 +6,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 
+
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -30,6 +32,8 @@ public class Main {
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.setSize(800,500);
 		FrontPanel fp = new FrontPanel();
+		
+		
 		
 		
 		

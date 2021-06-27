@@ -29,14 +29,12 @@ public class FrontPanel extends JPanel{
 		ImageIcon homeHeaderImage = new ImageIcon("menuHeader.png");
 		ImageIcon homeBgImage = new ImageIcon("fbbg.png");
 		
-		//this.setBounds(0, 0, 20, 60);
-		panel.setSize(300,300);
-		panel.setVisible(true);
-		panel.setBackground(Color.green);
+		
 		this.setVisible(true);
-		//this.setBackground(Color.blue);
-		//this.setLayout(new CardLayout());
-		this.setBackground(Color.red);
+		
+		this.setLayout(new GridLayout());
+	
+		this.setBackground(Color.black);
 		//labels
 		this.add(homeHeaderLabel);
 		this.add(homeBgLabel);
@@ -47,7 +45,8 @@ public class FrontPanel extends JPanel{
 		
 		homeHeaderLabel.setIcon(homeHeaderImage);
 		homeBgLabel.setIcon(homeBgImage);
-		 
+		
+		int count = 0;
 		
 		
 		
