@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,20 +19,18 @@ import javax.swing.JPanel;
 
 public class FrontPanel extends JPanel implements ActionListener{
 	
-	final int HEIGHT = 500, WIDTH = 1200;
+	
+	final int HEIGHT = 550, WIDTH = 500;
 	
 	JLabel homeHeaderLabel = new JLabel();
-	JLabel homeBgLabel = new JLabel();
-	JLabel demoLabel = new JLabel();
+	JLabel homeBirdLabel = new JLabel();
+	JLabel copyRightLabel = new JLabel("Copyright(C) 2021 by Joy LoRuth");
 	
-	//JButton optionsButton = new JButton(new ImageIcon("options.png"));
-	//JButton startButton = new JButton(new ImageIcon("start.png"));
-	
-	JButton optionsButton = new JButton("OPTIONS");
-	JButton startButton = new JButton("START");
+	JButton optionsButton = new JButton(new ImageIcon("options.png"));
+	JButton startButton = new JButton(new ImageIcon("start.png"));
 	
 	ImageIcon homeHeaderImage = new ImageIcon("menuHeader.png");
-	ImageIcon homeBgImage = new ImageIcon("fbbg.png");
+	ImageIcon homeBirdImage = new ImageIcon("flappyBird.png");
 	
 
 	
@@ -39,29 +38,29 @@ public class FrontPanel extends JPanel implements ActionListener{
 		
 		this.setVisible(true);
 		this.setSize(WIDTH, HEIGHT);
-		this.setBorder(BorderFactory.createEmptyBorder(30, 30, 30,30));
-		this.setBackground(Color.black);
-		
-		
-		//labels
+			
 		this.add(homeHeaderLabel);
-		this.add(homeBgLabel);
-		
-		///buttons
 		this.add(startButton);
 		this.add(optionsButton);
+		this.add(copyRightLabel);
+		//this.add(homeBirdLabel);
+		
+		this.setBackground(Color.black);
 		
 		startButton.setBackground(Color.orange);
-		startButton.setFont(new Font("Sans Serif", Font.PLAIN, 30));
 		optionsButton.setBackground(Color.orange);
-		optionsButton.setFont(new Font("Sans Serif", Font.PLAIN, 30));
+		
+		//startButton.setFont(new Font("Sans Serif", Font.PLAIN, 30));
+		//optionsButton.setFont(new Font("Sans Serif", Font.PLAIN, 30));*/
 		
 		homeHeaderLabel.setIcon(homeHeaderImage);
-		homeBgLabel.setIcon(homeBgImage);
+		homeBirdLabel.setIcon(homeBirdImage);
 		
 		startButton.addActionListener(this);
 		
-		//this.add(demoLabel);
+		
+		copyRightLabel.setFont(new Font("Sans Serif", Font.PLAIN, 15));
+		
 		
 		
 		
