@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 public class FrontPanel extends JPanel implements ActionListener{
 	
 	
-	final int HEIGHT = 700, WIDTH = 500;
+	final int HEIGHT = 720, WIDTH = 500;
 	
 	JLabel homeHeaderLabel = new JLabel();
 	JLabel homeBirdLabel = new JLabel();
@@ -45,13 +45,10 @@ public class FrontPanel extends JPanel implements ActionListener{
 		this.add(copyRightLabel);
 		//this.add(homeBirdLabel);
 		
-		this.setBackground(Color.black);
+		this.setBackground(Color.orange);
 		
 		startButton.setBackground(Color.orange);
 		optionsButton.setBackground(Color.orange);
-		
-		//startButton.setFont(new Font("Sans Serif", Font.PLAIN, 30));
-		//optionsButton.setFont(new Font("Sans Serif", Font.PLAIN, 30));*/
 		
 		homeHeaderLabel.setIcon(homeHeaderImage);
 		homeBirdLabel.setIcon(homeBirdImage);
@@ -59,7 +56,7 @@ public class FrontPanel extends JPanel implements ActionListener{
 		startButton.addActionListener(this);
 		
 		
-		copyRightLabel.setFont(new Font("Sans Serif", Font.PLAIN, 15));
+		copyRightLabel.setFont(new Font("Sans Serif", Font.BOLD, 15));
 		
 		
 		
@@ -83,3 +80,5 @@ public class FrontPanel extends JPanel implements ActionListener{
 	
 }
 
+//startButton.setFont(new Font("Sans Serif", Font.PLAIN, 30));
+		//optionsButton.setFont(new Font("Sans Serif", Font.PLAIN, 30));*/

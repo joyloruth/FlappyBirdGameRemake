@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 public class FrontFrame extends JFrame{
 	
-	final int WIDTH = 500, HEIGHT = 700;
+	final int WIDTH = 500, HEIGHT = 720;
 	
 	FrontFrame(){
 	JPanel panel = new JPanel();
