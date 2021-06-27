@@ -66,8 +66,8 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		//shift = shift + 2; 
-		//wallPosition = wallPosition - shiftWall;
+		shift = shift + 2; 
+		wallPosition = wallPosition - shiftWall;
 		
 		velocity  = velocity + fall;
 		velocity  = velocity + acceleration;
