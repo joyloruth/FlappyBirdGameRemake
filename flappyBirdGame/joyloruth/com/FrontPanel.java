@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 public class FrontPanel extends JPanel implements ActionListener{
 	
 	
-	final int HEIGHT = 550, WIDTH = 500;
+	final int HEIGHT = 700, WIDTH = 500;
 	
 	JLabel homeHeaderLabel = new JLabel();
 	JLabel homeBirdLabel = new JLabel();
@@ -29,7 +29,7 @@ public class FrontPanel extends JPanel implements ActionListener{
 	JButton optionsButton = new JButton(new ImageIcon("options.png"));
 	JButton startButton = new JButton(new ImageIcon("start.png"));
 	
-	ImageIcon homeHeaderImage = new ImageIcon("menuHeader.png");
+	ImageIcon homeHeaderImage = new ImageIcon("header.png");
 	ImageIcon homeBirdImage = new ImageIcon("flappyBird.png");
 	
 

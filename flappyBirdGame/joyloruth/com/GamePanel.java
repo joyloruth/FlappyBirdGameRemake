@@ -19,14 +19,7 @@ import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
-	 * 
-	 */
-	//private static final long serialVersionUID = 1L;
+	
 	final int WIDTH = 1200, HEIGHT = 550;
 	int flappyHeight = HEIGHT/4;
 	final int BARRIER_WIDTH = 90;
