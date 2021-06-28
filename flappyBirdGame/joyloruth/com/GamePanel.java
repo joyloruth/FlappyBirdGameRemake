@@ -26,18 +26,23 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	final int WIDTH = 1200, HEIGHT = 550;
 	int flappyHeight = HEIGHT/4;
 	final int BARRIER_WIDTH = 90;
+	int barrierPosition = 500;
+	
 	int velocity  = 0;
 	int acceleration = 4;
 	int shift = 8;
 	int fall = 1;
-	int barrierPosition = 500;
+	
 	int shiftBarrier =  5; 
+	int barrierGap = rand.nextInt(HEIGHT);
+	
 	JLabel score = new JLabel();
 	ImageIcon scoreIcon = new ImageIcon("score.png");
 	JLabel scoreLabel = new JLabel();
+	
 	int count = 0;
 	
-	int barrierGap = rand.nextInt(HEIGHT);
+	
 	
 	
 	
@@ -48,7 +53,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	
 	
 	public GamePanel() {
-		//t.start();
+		
 		this.setSize(WIDTH, HEIGHT);
 		this.addKeyListener(this);
 		this.setBackground(Color.cyan);
@@ -67,11 +72,13 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		shift = shift + 2; 
+		//shift = shift + 2; 
 		barrierPosition = barrierPosition - shiftBarrier;
 		
 		velocity  = velocity + fall;
 		velocity  = velocity + acceleration;
+		
+		
 				
 		repaint();
 		
@@ -81,13 +88,16 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 		super.paintComponent(g);
 		this.drawBarriers(g);
 		this.drawFlappyBird(g);
+		this.drawBorder(g);
+		
+		
 		
 	}
 	
 	public void drawFlappyBird(Graphics g){
 		g.setColor(Color.yellow);
 		
-		g.fill3DRect(shift, flappyHeight + velocity,25, 25, true);
+		g.fill3DRect(shift, velocity,25, 25, true);
 	}
 	
 	public void drawBarriers(Graphics g) {
@@ -107,16 +117,17 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
 		
-	    if(code == KeyEvent.VK_UP) {
-	    	velocity = -3; 
-	    	count++;
-	    }
-	    if(code == KeyEvent.VK_RIGHT) {shift = 80; }
+	    if(code == KeyEvent.VK_UP) {velocity = -3;}
+	    if(code == KeyEvent.VK_RIGHT) {shift = 80;}
 	    if(code == KeyEvent.VK_LEFT) {shift = -1; }
+	    if(code == KeyEvent.VK_DOWN) {shift = 3; }
 	}
 	
 	
-
+	void drawBorder(Graphics g){
+		g.drawLine(10, 10, 10, 10);
+		g.setColor(Color.BLACK);
+	}
 	
 	
 	

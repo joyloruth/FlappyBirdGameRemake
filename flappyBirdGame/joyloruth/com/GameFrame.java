@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 public class GameFrame extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
-	final int WIDTH = 1200, HEIGHT = 500;
+	final int WIDTH = 900, HEIGHT = 500;
 	
 	GameFrame(){
 	GamePanel gamePanel = new GamePanel();
