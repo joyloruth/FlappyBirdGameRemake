@@ -22,6 +22,7 @@ public class Main extends JFrame {
 	public static void main(String[] args) {
 		
 		FrontFrame frame = new FrontFrame(); 
+		//
 		
 	
 		
