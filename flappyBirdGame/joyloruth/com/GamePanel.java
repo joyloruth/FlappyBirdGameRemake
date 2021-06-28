@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Random;
+
 import javax.swing.Timer;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -19,6 +21,7 @@ import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	
+	Random rand = new Random();
 	
 	final int WIDTH = 1200, HEIGHT = 550;
 	int flappyHeight = HEIGHT/4;
@@ -27,14 +30,18 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	int acceleration = 4;
 	int shift = 8;
 	int fall = 1;
-	int wallPosition = 200;
-	int shiftWall =  5; 
+	int barrierPosition = 500;
+	int shiftBarrier =  5; 
 	JLabel score = new JLabel();
 	ImageIcon scoreIcon = new ImageIcon("score.png");
 	JLabel scoreLabel = new JLabel();
 	int count = 0;
 	
-	int gap = (int) Math.random() * HEIGHT;
+	int barrierGap = rand.nextInt(HEIGHT);
+	
+	
+	
+
 	
 	
 	
@@ -61,7 +68,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		shift = shift + 2; 
-		wallPosition = wallPosition - shiftWall;
+		barrierPosition = barrierPosition - shiftBarrier;
 		
 		velocity  = velocity + fall;
 		velocity  = velocity + acceleration;
@@ -85,10 +92,10 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	
 	public void drawBarriers(Graphics g) {
 		g.setColor(Color.green);
-		g.fill3DRect(wallPosition, 0, BARRIER_WIDTH, HEIGHT, true);
+		g.fill3DRect(barrierPosition, 0, BARRIER_WIDTH, HEIGHT, true);
 		
 		g.setColor(Color.cyan);
-		g.fillRect(wallPosition, gap, BARRIER_WIDTH, 75);
+		g.fillRect(barrierPosition, barrierGap, BARRIER_WIDTH, 75);
 		
 		
 		
@@ -101,7 +108,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 		int code = e.getKeyCode();
 		
 	    if(code == KeyEvent.VK_UP) {
-	    	velocity = -9; 
+	    	velocity = -3; 
 	    	count++;
 	    }
 	    if(code == KeyEvent.VK_RIGHT) {shift = 80; }
