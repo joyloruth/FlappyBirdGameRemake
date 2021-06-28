@@ -18,11 +18,10 @@ import javax.swing.JPanel;
 
 public class Main extends JFrame {
 	
-	final int HEIGHT = 500, WIDTH = 800;
 	
 	public static void main(String[] args) {
 		
-		FrontFrame frame = new FrontFrame();
+		FrontFrame frame = new FrontFrame(); 
 		
 	
 		
