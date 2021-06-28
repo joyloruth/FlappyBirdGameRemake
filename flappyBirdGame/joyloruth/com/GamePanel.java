@@ -31,9 +31,10 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	int shiftWall =  5; 
 	JLabel score = new JLabel();
 	ImageIcon scoreIcon = new ImageIcon("score.png");
-	
 	JLabel scoreLabel = new JLabel();
 	int count = 0;
+	
+	int gap = (int) Math.random() * HEIGHT;
 	
 	
 	
@@ -85,6 +86,12 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 	public void drawBarriers(Graphics g) {
 		g.setColor(Color.green);
 		g.fill3DRect(wallPosition, 0, BARRIER_WIDTH, HEIGHT, true);
+		
+		g.setColor(Color.cyan);
+		g.fillRect(wallPosition, gap, BARRIER_WIDTH, 75);
+		
+		
+		
 	}
 	
 
