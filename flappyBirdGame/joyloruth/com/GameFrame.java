@@ -11,9 +11,9 @@ public class GameFrame extends JFrame{
 	GameFrame(){
 	GamePanel gamePanel = new GamePanel();
 	
-	ImageIcon gameIcon = new ImageIcon("flappyBird.png");
+	ImageIcon gameIcon = new ImageIcon("peep.png");
 	this.setIconImage(gameIcon.getImage());
-	this.setTitle("FlappyBird");
+	this.setTitle("FlappyBird Game");
 	this.setVisible(true);
 	this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
 	this.setSize(WIDTH, HEIGHT);

@@ -19,7 +19,7 @@ public class FrontFrame extends JFrame{
 	panel.setBackground(Color.blue);
 	
 	
-	ImageIcon frontIcon = new ImageIcon("flappyBird.png");
+	ImageIcon frontIcon = new ImageIcon("peep.png");
 	FrontPanel frontPanel = new FrontPanel();
 	
 	this.setIconImage(frontIcon.getImage());		
