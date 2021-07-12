@@ -124,6 +124,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
 		g.setColor(Color.green);
 		g.fill3DRect(barrierPosition, 0, BARRIER_WIDTH, HEIGHT, true);
 		
+		
 		g.setColor(Color.cyan);
 		g.fillRect(barrierPosition, barrierGap, BARRIER_WIDTH, 100);
 		
